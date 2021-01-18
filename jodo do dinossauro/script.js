@@ -2,7 +2,7 @@ const dino = document.querySelector('.dino');
 const background = document.querySelector('.background');
 let isjumping  = false;
 let position = 0;
-
+//evento da tecla espaço
 function handlekeyup(event) {
 	if (event.keyCode === 32) {
 		if(!isjumping ) {
@@ -10,7 +10,7 @@ function handlekeyup(event) {
 		}
 	}
 }
-
+//Pulo do dinossauro
 function jump() {
 		isjumping = true;
 
@@ -35,7 +35,7 @@ function jump() {
 		}
 	},20);
 }
-
+//Cactus
 function createCactus() {
 	const cactus = document.createElement('div');
 	let cactusPosition = 1000;
@@ -52,7 +52,8 @@ function createCactus() {
 		}else if (cactusPosition > 0 && cactusPosition < 60 && position< 60 ){
 			//gamer over
 			clearInterval(leftinterval);
-			document.body.innerHTML = '<h1 class="game-over">Fim de Jogo</h1>';
+			document.body.innerHTML = '<h1 class="game-over">Fim de Jogo.<br><br>Não foi dessa vez.<br><br> Aperte o play e continue jogando<br><br><br><a href="file:///D:/dino/index.html"<button class="button_play">PLAY</button></a></h1>';
+			
 		}else{
 			cactusPosition -= 10;
 			cactus.style.left = cactusPosition + 'px';
